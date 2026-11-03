@@ -649,11 +649,19 @@
         </fieldset>
         <fieldset class="sprite-box" id="team-box">
             <legend align="center">Team / Box</legend>
+            <div class="sb-sync">
+                <button type="button" id="sb-link-save">Link mGBA save</button>
+                <button type="button" id="sb-sync-now" hidden>Sync now</button>
+            </div>
+            <label class="sb-save-button" for="sb-save-file" id="sb-pick-save">Load save file</label>
+            <input type="file" id="sb-save-file" class="sb-save-input" accept=".sav">
+            <p class="sb-hint">Pick <b>Run and Bun.sav</b> (mGBA keeps it next to the game file). In Chrome or Edge the calc then rereads it every time you save in the game. The file stays on your computer.</p>
+            <p class="sb-hint sb-save-status" id="sb-save-status" role="status" hidden></p>
             <div class="sb-label">Team</div>
             <div class="sb-list" id="sb-team"></div>
             <div class="sb-label">Box</div>
             <div class="sb-list" id="sb-box"></div>
-            <p class="sb-hint" id="sb-box-empty">Paste your team in Showdown format into Import / Export and press Import.</p>
+            <p class="sb-hint" id="sb-box-empty">Link your save above, or paste a team in Showdown format into Import / Export and press Import.</p>
             <div class="sb-label">Trash</div>
             <div class="sb-list" id="sb-trash"></div>
             <p class="sb-hint">Click a sprite to load it. Drag to move it between Team, Box and Trash; right-click swaps Team and Box.</p>
@@ -1601,6 +1609,8 @@
     <script type="text/javascript" src="./js/moveset_import.js"></script>
     <script type="text/javascript" src="./js/data/rnb-sprites.js"></script>
     <script type="text/javascript" src="./js/pe-extras.js"></script>
+    <script type="text/javascript" src="./js/data/rnb-ids.js"></script>
+    <script type="text/javascript" src="./js/rnb-save.js"></script>
 </div>
 
 <div class="credits">Base calculator created by Honko, maintained by Austin and Kris. Adapted by Joggel.

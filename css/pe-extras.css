@@ -226,3 +226,14 @@ html.pe-dark #theme-toggle.theme-pill:hover { background: rgba(255, 255, 255, 0.
 }
 
 html { background: #fff; } html.pe-dark, html.pe-dark body { background: #121212; color-scheme: dark; }
+.sb-sync { display: flex; gap: 6px; margin: 4px 0 6px; }
+.sb-sync button { flex: 1; padding: 7px 10px; border: 1px solid currentColor; border-radius: 6px; background: transparent;
+  color: inherit; font-weight: 700; cursor: pointer; }
+.sb-sync button:hover, .sb-save-button:hover { opacity: 0.8; }
+.sb-save-input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.sb-save-button { display: block; margin: 4px 0 6px; padding: 7px 10px; border: 1px solid currentColor; border-radius: 6px;
+  text-align: center; font-weight: 700; cursor: pointer; }
+.sb-save-input:focus-visible + .sb-hint, .sb-save-button:focus-visible, .sb-sync button:focus-visible { outline: 2px solid #7fd1ff; outline-offset: 2px; }
+.sb-save-button[hidden], .sb-sync button[hidden], .sb-sync[hidden] { display: none; }
+.sb-save-status { font-weight: 700; }
+.sb-save-status.sb-save-bad { color: #e0564a; }
