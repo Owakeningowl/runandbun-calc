@@ -1,0 +1,228 @@
+/* Sprite panels under Pokemon 1 and Pokemon 2 (Team / Box / Trash, Opposing Team), sized like the Null calc's. */
+.sprite-box {
+    clear: left;
+    width: 30em;
+    margin-top: 10px;
+    text-align: center;
+}
+.sb-label {
+    margin: 6px 0 3px;
+    font-weight: bold;
+}
+.sb-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 64px);
+    gap: 3px;
+    justify-content: start;
+    min-height: 64px;
+    padding: 2px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+}
+.sb-list.sb-over {
+    outline: 2px dashed #1abc9c;
+    outline-offset: -2px;
+}
+#sb-trash {
+    min-height: 40px;
+}
+.sb-pok {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    object-position: top center;
+    border-radius: 6px;
+    cursor: pointer;
+    image-rendering: pixelated;
+}
+.sb-pok:hover {
+    outline: 2px solid #1abc9c;
+    outline-offset: -2px;
+}
+.sb-pok.sb-active {
+    background: rgba(26, 188, 156, 0.18);
+    outline: 2px solid #1abc9c;
+    outline-offset: -2px;
+}
+.sb-trainer {
+    margin: 4px 0 6px;
+    font-weight: bold;
+}
+.sb-controls {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 8px;
+}
+.sb-hint {
+    margin: 8px 0 6px;
+    font-size: 0.85em;
+    color: #666;
+}
+#sb-empty-trash {
+    margin-top: 2px;
+}
+
+/* ===== Dark mode (html.pe-dark), palette from the Null calc's dark theme ===== */
+html.pe-dark {
+    --text: #e4e4e4;
+    --background: #222222;
+    --fieldset: #333333;
+    --line: #111111;
+    --hover: #000000;
+    --selected: #232e51;
+    color-scheme: dark;
+}
+html.pe-dark,
+html.pe-dark body,
+html.pe-dark .wrapper,
+html.pe-dark .credits {
+    background-color: var(--background);
+    color: var(--text);
+}
+html.pe-dark .header {
+    background: #1a1a1a;
+    border-bottom-color: #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+html.pe-dark .button {
+    color: var(--text);
+    background: #2c2c2c;
+    border-color: #111;
+    text-shadow: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+html.pe-dark .button:hover {
+    background: #000;
+    border-color: #555;
+}
+html.pe-dark .greenbutton {
+    background: #23422b;
+    border-color: #2f6a3b;
+}
+html.pe-dark .greenbutton:hover {
+    background: #2b5535;
+}
+html.pe-dark fieldset {
+    background-color: var(--fieldset);
+    border-color: #4a4a4a;
+}
+html.pe-dark .btn {
+    color: var(--text);
+    background: var(--background);
+    border-color: var(--line);
+}
+html.pe-dark .visually-hidden:focus + .btn,
+html.pe-dark .btn:hover {
+    background: var(--hover);
+    border-color: var(--fieldset);
+}
+html.pe-dark .visually-hidden:checked + .btn {
+    color: var(--text);
+    background: var(--selected);
+}
+html.pe-dark .visually-hidden:disabled + .btn {
+    color: #666;
+}
+html.pe-dark .locked-move:checked + .btn {
+    color: #222;
+    background: #e6d96b;
+}
+html.pe-dark input,
+html.pe-dark select,
+html.pe-dark textarea,
+html.pe-dark button {
+    color: var(--text);
+    background-color: var(--background);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+html.pe-dark button:hover {
+    background-color: var(--hover);
+}
+html.pe-dark a {
+    color: #7a9cff;
+}
+html.pe-dark .nav a.button {
+    color: var(--text);
+}
+html.pe-dark .sb-list {
+    background: rgba(0, 0, 0, 0.22);
+}
+html.pe-dark .sb-hint {
+    color: #a8a8a8;
+}
+
+/* select2 (set and move dropdowns) */
+html.pe-dark .select2-container .select2-choice {
+    color: var(--text);
+    background: var(--background);
+    background-image: linear-gradient(#333, 70%, #222);
+    border-color: var(--line);
+}
+html.pe-dark .select2-container .select2-choice .select2-arrow {
+    background: none;
+    border-left: none;
+}
+html.pe-dark .select2-container-active .select2-choice,
+html.pe-dark .select2-dropdown-open .select2-choice {
+    border-color: var(--line);
+    background: #2a2a2a;
+    box-shadow: none;
+}
+html.pe-dark .select2-drop,
+html.pe-dark .select2-drop-active {
+    color: var(--text);
+    background: var(--background);
+    border-color: var(--line);
+}
+html.pe-dark .select2-search input {
+    color: var(--text);
+    background-color: #2a2a2a;
+    border-color: var(--line);
+}
+html.pe-dark .select2-results .select2-highlighted {
+    background: var(--selected);
+    color: #fff;
+}
+html.pe-dark .select2-results .select2-no-results,
+html.pe-dark .select2-results .select2-searching,
+html.pe-dark .select2-more-results {
+    background: #2a2a2a;
+    color: var(--text);
+}
+
+/* Theme toggle: a small pill pinned to the right end of the header bar, clear of the logo. */
+.header { position: relative; }
+#theme-toggle.theme-pill {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font: bold 11px/1.5 Verdana, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+#theme-toggle.theme-pill:hover { background: rgba(255, 255, 255, 0.24); }
+#theme-toggle.theme-pill:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+#theme-toggle .theme-pill-icon { font-size: 13px; line-height: 1; }
+html.pe-dark #theme-toggle.theme-pill {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.05);
+    color: #d6d6d6;
+}
+html.pe-dark #theme-toggle.theme-pill:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.3); }
+@media (max-width: 760px) {
+    #theme-toggle .theme-pill-text { display: none; }
+    #theme-toggle.theme-pill { padding: 5px 8px; right: 10px; }
+}
+
+html { background: #fff; } html.pe-dark, html.pe-dark body { background: #121212; color-scheme: dark; }
